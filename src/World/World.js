@@ -1,4 +1,4 @@
-import { Clock } from '/final-project-han/vendor/three/three.module.js'
+import { Clock } from '/sapienzainteractivegraphicscourse/vendor/three/three.module.js'
 
 import { OrbitControls } from '/vendor/three/OrbitControls.js'
 
