@@ -1,6 +1,6 @@
-import { Clock } from '/SapienzaInteractiveGraphicsCourse/final-project-han/vendor/three/three.module.js'
+import { Clock } from '/vendor/three/three.module.js'
 
-import { OrbitControls } from '/SapienzaInteractiveGraphicsCourse/final-project-han/vendor/three/OrbitControls.js'
+import { OrbitControls } from '/vendor/three/OrbitControls.js'
 
 import { createRenderer } from './systems/renderer.js'
 import { Resizer } from './systems/Resizer.js'
