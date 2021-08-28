@@ -2,6 +2,7 @@ const LEFT = 'a'
 const RIGHT = 'd'
 const LEFT_CLICK = 0
 const RIGHT_CLICK = 2
+const UP_ARROW = 'ArrowUp'
 
 const actions = {
     LEFT: false,
@@ -23,7 +24,8 @@ function set_action (action_id, bool)
             actions.RIGHT = bool
             break
 
-        case LEFT_CLICK : 
+        case LEFT_CLICK :
+        case UP_ARROW : 
             actions.LEFT_CLICK = bool
             break
 

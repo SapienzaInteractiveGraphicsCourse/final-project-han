@@ -49,9 +49,9 @@ const NUM_ENEMY_ROWS = NUM_ROWS - FIRST_ENEMY_ROW
 
 const CASUAL_SHOOTING_PROBABILITY = 0.01
 
-const DIFFICULTY_UPDATE_TIME    = 20
+let difficulty_update_time      = 20
 const MOVEMENT_INCREASE         = 100
-const SHOOTING_DECAY_MULT       = 0.9
+const SHOOTING_DECAY_MULT       = 0.8
 
 let player_id = null
 let timer = 0
@@ -64,6 +64,7 @@ let level = 1
 const LEVEL_MULTIPLIER  = 1.5
 const DAMAGE_MULT       = 1.1
 const DURABILITY_MULT   = 1.2 
+const UPDATE_TIME_MULT  = 0.9
 
 class SpaceshipsManager extends ObjectManager
 {
@@ -141,7 +142,7 @@ class SpaceshipsManager extends ObjectManager
         if (! this.player) return this.#gameOver()
 
         timer += delta
-        if (timer >= DIFFICULTY_UPDATE_TIME)
+        if (timer >= difficulty_update_time)
             this.#difficultyUp()
 
         this.#updateShooters()
@@ -193,6 +194,7 @@ class SpaceshipsManager extends ObjectManager
     {
         level++
         num_enemies = 0
+        timer = 0
 
         this.#initFrom(FIRST_ENEMY_ROW)
 
@@ -200,12 +202,17 @@ class SpaceshipsManager extends ObjectManager
 
         UI.increaseMultiplier(LEVEL_MULTIPLIER)
 
+        difficulty_update_time *= UPDATE_TIME_MULT
+
+        const dam_mult_pow = Math.pow(DAMAGE_MULT, level - 1)
+        const dur_mult_pow = Math.pow(DURABILITY_MULT, level - 1)
+
         for (const ship of this.map.values())
         {
             if (! isEnemy(ship)) continue
 
-            ship.damage *= DAMAGE_MULT
-            ship.durability *= DURABILITY_MULT 
+            ship.damage *= dam_mult_pow
+            ship.durability *= dur_mult_pow 
         }
     }
 

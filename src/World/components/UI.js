@@ -35,7 +35,7 @@ class UI
         else 
         {
             const old_score_plus = parseInt(score_plus.innerHTML.substr(1))
-            const new_score_plus = old_score_plus + add_score
+            const new_score_plus = parseInt(old_score_plus + add_score)
             score_plus.innerHTML = '+' + new_score_plus
         }
 
