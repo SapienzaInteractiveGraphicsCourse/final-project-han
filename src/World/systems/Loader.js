@@ -4,8 +4,8 @@ import { TextureLoader } from '/final-project-han/vendor/three/three.module.js'
 
 import { makeStarMesh, makeBullet } from './meshMaker.js'
 
-const MODELS_PATH = '/assets/models/'
-const TEXTURES_PATH = '/assets/textures/'
+const MODELS_PATH = '/final-project-han/assets/models/'
+const TEXTURES_PATH = '/final-project-han/assets/textures/'
 
 //let loaderFBX
 let loaderGLB
