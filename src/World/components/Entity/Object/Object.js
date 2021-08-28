@@ -1,5 +1,5 @@
-import { Vector3 } from '/vendor/three/three.module.js'
-import { Group } from '/vendor/three/three.module.js'
+import { Vector3 } from '/final-project-han/vendor/three/three.module.js'
+import { Group } from '/final-project-han/vendor/three/three.module.js'
 
 import { Entity } from "../Entity.js"
 import Loader from '../../../systems/Loader.js'

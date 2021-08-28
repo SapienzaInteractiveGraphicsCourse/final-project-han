@@ -1,4 +1,4 @@
-import { Color, Scene } from '/vendor/three/three.module.js'
+import { Color, Scene } from '/final-project-han/vendor/three/three.module.js'
 
 function createScene() {
   const scene = new Scene()

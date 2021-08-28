@@ -4,7 +4,7 @@ import {
     EdgesGeometry,
     LineBasicMaterial,
     BoxGeometry
-} from '/vendor/three/three.module.js'
+} from '/final-project-han/vendor/three/three.module.js'
 
 const HITBOX_IS_VISIBLE = false
 

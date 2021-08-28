@@ -1,4 +1,4 @@
-import { WebGLRenderer } from '/vendor/three/three.module.js'
+import { WebGLRenderer } from '/final-project-han/vendor/three/three.module.js'
 
 function createRenderer() 
 {

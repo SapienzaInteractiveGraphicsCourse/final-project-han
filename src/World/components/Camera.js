@@ -1,7 +1,7 @@
-import { PerspectiveCamera } from '/vendor/three/three.module.js'
+import { PerspectiveCamera } from '/final-project-han/vendor/three/three.module.js'
 
-import { Tween } from '/vendor/tween/Tween.js'
-import { Easing } from '/vendor/tween/Easing.js'
+import { Tween } from '/final-project-han/vendor/tween/Tween.js'
+import { Easing } from '/final-project-han/vendor/tween/Easing.js'
 
 
 class Camera extends PerspectiveCamera

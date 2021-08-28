@@ -1,6 +1,6 @@
 import { Clock } from '/final-project-han/vendor/three/three.module.js'
 
-import { OrbitControls } from '/vendor/three/OrbitControls.js'
+import { OrbitControls } from '/final-project-han/vendor/three/OrbitControls.js'
 
 import { createRenderer } from './systems/renderer.js'
 import { Resizer } from './systems/Resizer.js'

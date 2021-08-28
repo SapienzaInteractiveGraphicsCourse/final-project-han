@@ -1,6 +1,6 @@
-import { FBXLoader } from '/vendor/three/FBXLoader.js'
-import { GLTFLoader } from '/vendor/three/GLTFLoader.js'
-import { TextureLoader } from '/vendor/three/three.module.js'
+import { FBXLoader } from '/final-project-han/vendor/three/FBXLoader.js'
+import { GLTFLoader } from '/final-project-han/vendor/three/GLTFLoader.js'
+import { TextureLoader } from '/final-project-han/vendor/three/three.module.js'
 
 import { makeStarMesh, makeBullet } from './meshMaker.js'
 

@@ -1,4 +1,4 @@
-import { Tween } from '/vendor/tween/Tween.js'
+import { Tween } from '/final-project-han/vendor/tween/Tween.js'
 
 import { Spaceship } from "./Spaceship.js"
 import { PlayerBullet } from "../Bullets/PlayerBullet.js"

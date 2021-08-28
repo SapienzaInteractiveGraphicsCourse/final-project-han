@@ -1,4 +1,4 @@
-import { Vector3, Box3 } from '/vendor/three/three.module.js'
+import { Vector3, Box3 } from '/final-project-han/vendor/three/three.module.js'
 
 import { Object } from "../Object.js"
 import { Hitbox } from './HitBox.js'

@@ -2,7 +2,7 @@ import {
     Mesh,
     MeshPhongMaterial,
     BoxGeometry
-} from '/vendor/three/three.module.js'
+} from '/final-project-han/vendor/three/three.module.js'
 
 
 function makeStarMesh () 

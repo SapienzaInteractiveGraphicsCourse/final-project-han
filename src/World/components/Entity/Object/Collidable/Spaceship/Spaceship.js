@@ -1,5 +1,5 @@
-import { Tween } from '/vendor/tween/Tween.js'
-import { Easing } from '/vendor/tween/Easing.js'
+import { Tween } from '/final-project-han/vendor/tween/Tween.js'
+import { Easing } from '/final-project-han/vendor/tween/Easing.js'
 
 import { Collidable } from "../Collidable.js"
 import { Explosion } from '../../../ObjectManager/Explosion.js'

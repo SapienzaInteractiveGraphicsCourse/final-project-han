@@ -1,4 +1,4 @@
-import { Color } from '/vendor/three/three.module.js'
+import { Color } from '/final-project-han/vendor/three/three.module.js'
 
 import { ObjectManager } from "./ObjectManager.js"
 import { Debris } from "../Object/Debris.js"
