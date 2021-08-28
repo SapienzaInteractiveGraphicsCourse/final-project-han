@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IG Project</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+
+    <link rel="icon" href="https://discoverthreejs.com/favicon.ico" type="image/x-icon">
+
+    <link href="./styles/main.css" rel="stylesheet" type="text/css">
+    <link href="./styles/loading.css" rel="stylesheet" type="text/css">
+    <link href="./styles/menu.css" rel="stylesheet" type="text/css">
+    <link href="./styles/ui.css" rel="stylesheet" type="text/css">
+
+    <script type="module" src="./src/main.js"></script>
+</head>
+
+<body>
+    <div id="scene-container">
+
+        <span id="fps-counter"> FPS: 00  </span>
+
+        <div class="outer" id="loading-screen">
+            <div class="middle">
+                <div class="inner">
+                    <div class="ring"> Loading </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="outer" id="menu-screen">
+            <div class="middle">
+                <div class="inner">
+                    <div class='title'> 
+                        SPACE DEFENDERS 
+                    </div>
+                    <div class='options'>
+                        <div class='option' id='play-btn'>
+                            PLAY
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="outer" id="pause-menu-screen">
+            <div class="middle">
+                <div class="inner">
+                    <div class='options'>
+                        <div class='option' id='continue-btn'>
+                            CONTINUE
+                        </div>
+                        <div class='option' id='menu-btn'>
+                            MENU
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="outer" id="game-over-screen">
+            <div class="middle">
+                <div class="inner">
+                    <div class='title'> 
+                        GAME OVER
+                    </div>
+                    <div class='options'>
+                        <div class='score'> 
+                            SCORE:<span id='final-score'></span>
+                        </div>
+                        <div class='option' id='menu-btn-2'>
+                            MENU
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ui-screen">
+            <div class='ui'>HEALTH:<span id="health">100</span></div>
+            <div class='ui' id='score-panel'>
+                <div id='score-plus'></div>
+                <div>SCORE:<span id="score"></span></div>    
+            </div> 
+        </div>
+
+        <div class="outer" id="level-up-screen">
+            <div class="middle">
+                <div class="inner">
+                    <div>
+                        LEVEL <span id='level'>1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Here we will add the canvas -->
+    </div>
+</body>
+
+
+
+</html>

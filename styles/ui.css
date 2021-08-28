@@ -1,0 +1,50 @@
+@font-face {
+    font-family: uiFont;
+    src: url(ARCADE_I.ttf);
+
+    font-weight: 900;
+
+    -webkit-font-smoothing: none;
+    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+#ui-screen {
+    display: none;
+    align-items: flex-end;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+    font-size: 20px;
+    font-family: uiFont;
+
+    z-index: 0;
+}
+
+.ui {
+    width: 50vw;
+}
+
+#score-panel {
+    text-align: end;
+}
+
+#health { 
+    text-align: start;
+}
+
+#level-up-screen 
+{
+    display: none;
+
+    font-size: 20px;
+    font-family: uiFont;
+
+    color: rgb(210, 210, 210);
+
+    text-align: center;
+}
