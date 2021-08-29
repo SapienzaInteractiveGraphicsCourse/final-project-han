@@ -7,9 +7,20 @@ class SmallEnemy extends Enemy
     {
         super()
 
+        this.rotation.y = Math.PI / 2
+
         this.mass = 10
         this.friction_coeff = 4
-        this.power = 700
+        this.power = 200
+
+        this.durability = 10
+
+        this.points4damage = 0
+        this.points4kill = 1000
+
+        this.explosion_color = 'rgb(25, 90, 55)'
+        this.damage_explosion_power = 10
+        this.final_explosion_power = 200
     }
 
     loadMesh (mesh_loader) { return mesh_loader.small_enemy }
@@ -18,10 +29,24 @@ class SmallEnemy extends Enemy
     {
         const hit_box = new Hitbox()
 
-        hit_box.setBox(0, 0, 0.3, 2.2, 2.0, 0.5, 0)
-        hit_box.setBox(0, 0, 0.0, 0.6, 2.0, 2.5, 1)
+        hit_box.setBox(0, 0, 0, 2.5, 4.0, 2.5, 0)
 
         return hit_box
+    }
+
+    goRight ()
+    {
+        this.initial_x = this.position.x
+        this.changeState(this.MOVING_RIGHT_STATE)
+    }
+
+    goLeft () { this.goRight() }
+
+    update (delta)
+    {
+        super.update(delta)
+
+        if (this.position.x > 120) this.die()
     }
 }
 

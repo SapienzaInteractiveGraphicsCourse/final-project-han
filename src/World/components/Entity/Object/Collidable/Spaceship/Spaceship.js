@@ -7,6 +7,8 @@ import { Explosion } from '../../../ObjectManager/Explosion.js'
 import BulletManager from '../../../ObjectManager/BulletManager.js'
 import ExplosionManager from '../../../ObjectManager/ExplosionManager.js'
 
+import Audio from '../../../../../systems/AudioPlayer.js'
+
 
 class Spaceship extends Collidable
 {
@@ -141,6 +143,8 @@ class Spaceship extends Collidable
         bullet.damage = this.damage
 
         BulletManager.add(bullet)
+
+        Audio.playShootingSFX(this.position.z)
     }
 
     collision (other)
@@ -159,6 +163,8 @@ class Spaceship extends Collidable
         const explosion = new Explosion(this.final_explosion_power, this.explosion_color)
         explosion.position.set(this.position.x, this.position.y, this.position.z)
         ExplosionManager.add(explosion)
+
+        Audio.playExplosionSFX(this.position.z)
     }
 } 
 

@@ -21,18 +21,16 @@
 }
 
 #menu-screen {
-
     text-align: center;
 
     display: none;
-
 }
 
 .title {
-    height: 40vh;
-    line-height: 40vh;
+    height: 30vh;
+    line-height: 30vh;
 
-    font-size: 70px;
+    font-size: 8vw;
     font-family: titleFont;
 
     letter-spacing: 5px;
@@ -41,10 +39,10 @@
 }
 
 .options {
-    height: 60vh;
-    line-height: 60vh;
+    height: 70vh;
+    line-height: 70vh;
 
-    font-size: 30px;
+    font-size: 4.5vw;
     font-family: optionFont;
 
     letter-spacing: 5px;
@@ -67,6 +65,67 @@
 .option:hover {
     background-color: rgb(30, 30, 30);
 }
+
+.commands {
+    width: 100%;
+    height: 20vh;
+    line-height: 20vh;
+
+    font-size: 3vh;
+
+    letter-spacing: 0px;
+}
+
+.command {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 800;
+    
+    border: 2px solid rgb(150, 150, 150);
+    border-radius: 7px;
+
+    padding-top: 1vh;
+    padding-bottom: 0.5vh;
+    padding-right: 1.5vh;
+    padding-left: 1vh;
+    font-size: 4vh;
+}
+
+#mouse {
+    margin-top: 5px;
+    max-width: 5vh;
+    height: auto;
+}
+
+@media screen and (min-width: 601px) {
+    .command {
+        font-size: 4vh;
+    }
+    .commands {
+        font-size: 3vh;
+    }
+    #com-pc {
+        display: table;
+    }
+    #com-mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .command {
+        font-size: 4vw;
+    }
+    .commands {
+        font-size: 3vw;
+    }
+    #com-pc {
+        display: none;
+    }
+    #com-mobile {
+        display: table;
+    }
+}
+  
 
 .score {
     width: 50%;
@@ -94,5 +153,4 @@
     display: none;
 
     background-color: rgb(0, 0, 0, 0.8);
-
 }

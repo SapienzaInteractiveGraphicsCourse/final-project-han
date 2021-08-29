@@ -35,6 +35,8 @@ function set_action (action_id, bool)
     }
 }
 
+const touch_start = {x: 0, y: 0}
+
 class Controls 
 { 
     constructor ()
@@ -67,6 +69,40 @@ class Controls
         document.addEventListener('mouseup',  function (event) {
             set_action(event.button, false)
             event.preventDefault()
+        })
+
+        // MOBILE
+        document.addEventListener('touchstart', function (event) {
+            touch_start.x = event.touches[0].pageX 
+            set_action(LEFT_CLICK, true)
+        })
+
+        document.addEventListener('touchend', function (event) {
+            set_action(LEFT_CLICK, false)
+            set_action(RIGHT, false)
+            set_action(LEFT, false)
+        })
+
+        document.addEventListener('touchmove', function (event) {
+            const x_rel = event.touches[0].pageX - screen.width / 2 //- touch_start.x
+
+            console.log(x_rel)
+
+            if (Math.abs(x_rel) < 50)
+            {
+                set_action(RIGHT, false)
+                set_action(LEFT, false)
+            }
+
+            else if (x_rel > 0) {
+                set_action(LEFT, false)
+                set_action(RIGHT, true)
+            }
+            else if (x_rel < 0) 
+            {
+                set_action(RIGHT, false)
+                set_action(LEFT, true)
+            }
         })
     }
 

@@ -66,6 +66,14 @@ const DAMAGE_MULT       = 1.1
 const DURABILITY_MULT   = 1.2 
 const UPDATE_TIME_MULT  = 0.9
 
+// zio toto
+const ZIO_TOTO_SPAWN_X = -80
+const ZIO_TOTO_ROW_Z = FIRST_ROW_Z + NUM_ROWS * SPAWN_ROW_EACH
+const ZIO_TOTO_RESET_TIME = 60
+const ZIO_TOTO_HEALTH = 20 // health reward from killing
+let zio_timer = 0
+let zio_toto_time = 0
+
 class SpaceshipsManager extends ObjectManager
 {
     constructor () 
@@ -89,6 +97,8 @@ class SpaceshipsManager extends ObjectManager
         game_over = false
         level = 1
         num_enemies = 0
+
+        zio_toto_time = Math.random() * ZIO_TOTO_RESET_TIME
 
         this.#initFrom(0)
         this.#initPlayer()
@@ -146,12 +156,15 @@ class SpaceshipsManager extends ObjectManager
             this.#difficultyUp()
 
         this.#updateShooters()
+
+        this.#updateZioToto(delta)
     }
 
     remove (obj)
     {
         super.remove(obj)
         if (isEnemy(obj)) num_enemies--
+        if (obj instanceof SmallEnemy && this.player) this.player.durability += ZIO_TOTO_HEALTH
     }
 
     #updateShooters ()
@@ -173,6 +186,29 @@ class SpaceshipsManager extends ObjectManager
                 if (shooter.position.z >= FIRST_ROW_Z - 7)
                     game_over = true
             }
+        }
+    }
+
+    #updateZioToto (delta)
+    {
+        zio_timer += delta
+
+        if (zio_timer >= zio_toto_time) 
+        {
+            zio_toto_time = ZIO_TOTO_RESET_TIME + 1
+
+            const zio_toto = new SmallEnemy()
+            zio_toto.position.set(ZIO_TOTO_SPAWN_X, 0, ZIO_TOTO_ROW_Z)
+            zio_toto.updateHitBoxPosition()
+            this.add(zio_toto)
+
+            zio_toto.goRight()
+        }
+
+        if (zio_timer > ZIO_TOTO_RESET_TIME)
+        {
+            zio_timer = 0
+            zio_toto_time = Math.random() * ZIO_TOTO_RESET_TIME
         }
     }
 

@@ -30,8 +30,8 @@ class PowerEnemy extends Enemy
     {
         const hit_box = new Hitbox()
 
-        hit_box.setBox(0, 0, -1.5, 4.5, 2.0, 2.0, 0)
-        hit_box.setBox(0, 0,  0.0, 1.3, 2.0, 6.0, 1)
+        hit_box.setBox(0, 0, -1.5, 4.5, 4.0, 2.0, 0)
+        hit_box.setBox(0, 0,  0.0, 1.3, 4.0, 6.0, 1)
 
         return hit_box
     }

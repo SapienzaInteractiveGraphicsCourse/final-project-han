@@ -19,6 +19,7 @@ import BulletManager from './components/Entity/ObjectManager/BulletManager.js'
 import ExplosionManager from './components/Entity/ObjectManager/ExplosionManager.js'
 
 import UI from './components/UI.js'
+import Audio from './systems/AudioPlayer.js'
 
 // The world represents the combination of all the elements in the game
 
@@ -66,6 +67,8 @@ const pause_menu = document.querySelector('#pause-menu-screen')
 const continue_btn = document.querySelector('#continue-btn')
 const menu_btn = document.querySelector('#menu-btn')
 
+const pause_btn = document.querySelector('#pause-btn')
+
 const game_over_menu = document.querySelector('#game-over-screen')
 const menu_btn2 = document.querySelector('#menu-btn-2')
 
@@ -75,6 +78,7 @@ const level_screen = document.querySelector('#level-up-screen')
 const level = document.querySelector('#level')
 
 function show (elem) { elem.style.display = (elem === ui) ? 'flex' : 'table' }
+function show_pause_btn() { pause_btn.style.display = 'inline' }
 function hide (elem) { elem.style.display = 'none' }
 
 play_btn.addEventListener('click', play)
@@ -85,6 +89,7 @@ menu_btn2.addEventListener('click', end)
 document.addEventListener('keydown', (event) => {
     if (event.key == 'Escape') pause()
 })
+pause_btn.addEventListener('click', pause)
 
 function play () 
 {
@@ -98,6 +103,7 @@ function play ()
 
     hide(menu)
     show(ui)
+    show_pause_btn()
     show(level_screen)
 
     camera.transitionTo(IN_GAME_POSITION, 2000, IN_GAME_LOOK_AT, start)
@@ -114,6 +120,7 @@ function resume ()
 {
     paused = false
 
+    show_pause_btn()
     hide(pause_menu)
 }
 
@@ -123,6 +130,7 @@ function pause ()
 
     paused = true
 
+    hide(pause_btn)
     show(pause_menu)
 }
 
@@ -134,6 +142,7 @@ function end ()
     hide(pause_menu)
     hide(game_over_menu)
     hide(ui)
+    hide(pause_btn)
 
     camera.transitionTo(MENU_POSITION, 2000, MENU_LOOK_AT, reset)
     camera.follow(null)    

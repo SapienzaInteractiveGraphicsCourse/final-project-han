@@ -14,10 +14,16 @@
     <link href="./styles/menu.css" rel="stylesheet" type="text/css">
     <link href="./styles/ui.css" rel="stylesheet" type="text/css">
 
+    <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css">
+
     <script type="module" src="./src/main.js"></script>
 </head>
 
 <body>
+    <audio id='music'><source src="./assets/audio/music.wav"></audio>
+    <audio id='shooting-sfx'><source src="./assets/audio/shooting.wav"></audio>
+    <audio id='explosion-sfx'><source src="./assets/audio/explosion.wav"></audio>
+
     <div id="scene-container">
 
         <span id="fps-counter"> FPS: 00  </span>
@@ -39,6 +45,19 @@
                     <div class='options'>
                         <div class='option' id='play-btn'>
                             PLAY
+                        </div>
+                        <div class='commands' id='com-pc'>
+                            <span class='command'>A</span>=LEFT&nbsp;
+                            <span class='command'>D</span>=RIGHT&nbsp;
+                            <span class='command'><i class="fa fa-arrow-up" aria-hidden="true"></i></span>=SHOOT
+                            <!-- <img src="./assets/images/left-mouse.png" id='mouse'> --> 
+                        </div>
+
+                        <div class='commands' id='com-mobile'>
+                            <span class='command'><i class="fa fa-arrow-left" aria-hidden="true"></i></span>=LEFT&nbsp;
+                            <span class='command'><i class="fa fa-arrow-right" aria-hidden="true"></i></span>=RIGHT&nbsp;
+                            <span class='command'><i class="fa fa-hand-o-up" aria-hidden="true"></i></span>=SHOOT
+                            <!-- <img src="./assets/images/left-mouse.png" id='mouse'> --> 
                         </div>
                     </div>
                 </div>
@@ -78,6 +97,8 @@
             </div>
         </div>
 
+        <i class="fa fa-pause" id='pause-btn' aria-hidden="true"></i>
+
         <div id="ui-screen">
             <div class='ui'>HEALTH:<span id="health">100</span></div>
             <div class='ui' id='score-panel'>
@@ -94,6 +115,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div id='audio-icon'> 
+            <i id='volume-off' class="fa fa-volume-off" aria-hidden="true"></i>
+            <i id='volume-up' class="fa fa-volume-up" aria-hidden="true"></i>
         </div>
 
         <!-- Here we will add the canvas -->

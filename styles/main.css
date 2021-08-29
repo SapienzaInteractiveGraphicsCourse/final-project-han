@@ -64,5 +64,8 @@ h1 {
 }
 
 #fps-counter {
+    position: absolute;
+    width: 100vw;
+    text-align: center;
     color: yellow;
 }

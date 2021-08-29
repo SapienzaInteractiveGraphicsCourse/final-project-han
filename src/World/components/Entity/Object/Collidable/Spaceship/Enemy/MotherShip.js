@@ -32,8 +32,8 @@ class MotherShip extends Enemy
     {
         const hit_box = new Hitbox()
 
-        hit_box.setBox(0, 0, -1.0, 7.0, 2.0, 4.0, 0)
-        hit_box.setBox(0, 0,  0.0, 1.5, 2.0, 6.0, 1)
+        hit_box.setBox(0, 0, -1.0, 7.0, 4.0, 4.0, 0)
+        hit_box.setBox(0, 0,  0.0, 1.5, 4.0, 6.0, 1)
 
         return hit_box
     }

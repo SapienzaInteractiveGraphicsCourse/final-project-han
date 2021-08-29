@@ -30,8 +30,8 @@ class BasicEnemy extends Enemy
     {
         const hit_box = new Hitbox()
 
-        hit_box.setBox(0, 0, -0.7, 3.5, 2.0, 4.5, 0)
-        hit_box.setBox(0, 0,  0.5, 1.3, 2.0, 4.5, 1)
+        hit_box.setBox(0, 0, -0.7, 3.5, 4.0, 4.5, 0)
+        hit_box.setBox(0, 0,  0.5, 1.3, 4.0, 4.5, 1)
 
         return hit_box
     }
