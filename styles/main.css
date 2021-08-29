@@ -2,8 +2,11 @@ body {
     /* remove margins and scroll bars */
     margin: 0;
     overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
 
     height: 100%;
+    width: 100%;
   
     /* style text */
     text-align: center;
