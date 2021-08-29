@@ -81,14 +81,14 @@ class Controls
             set_action(LEFT_CLICK, false)
             set_action(RIGHT, false)
             set_action(LEFT, false)
+
+            event.preventDefault();
         })
 
         document.addEventListener('touchmove', function (event) {
-            const x_rel = event.touches[0].pageX - screen.width / 2 //- touch_start.x
+            const x_rel = event.touches[0].pageX - touch_start.x // - screen.width / 2
 
-            console.log(x_rel)
-
-            if (Math.abs(x_rel) < 50)
+            if (Math.abs(x_rel) < 25)
             {
                 set_action(RIGHT, false)
                 set_action(LEFT, false)
