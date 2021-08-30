@@ -103,7 +103,10 @@ class Controls
                 set_action(RIGHT, false)
                 set_action(LEFT, true)
             }
-        })
+
+            event.preventDefault()
+            event.stopPropagation()
+        }, { passive: false })
     }
 
     get left () { return actions.LEFT }
