@@ -51,7 +51,7 @@ function playSFX (sfx, distance)
     audio.volume = sfx.volume - Math.abs(distance / 400)
     audio.play()
 
-    setTimeout(() => { audio.remove() }, 2000)
+    setTimeout(() => { audio.remove() }, 400)
     
 }
 
