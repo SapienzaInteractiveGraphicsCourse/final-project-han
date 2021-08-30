@@ -81,8 +81,6 @@ class Controls
             set_action(LEFT_CLICK, false)
             set_action(RIGHT, false)
             set_action(LEFT, false)
-
-            event.preventDefault();
         })
 
         document.addEventListener('touchmove', function (event) {

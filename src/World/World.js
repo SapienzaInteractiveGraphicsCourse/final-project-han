@@ -174,9 +174,11 @@ function levelUp ()
 function gameOver ()
 {
     started = false
+    paused = true
 
     show(game_over_menu)
     hide(ui)
+    hide(pause_btn)
 
     UI.setFinalScore()
 }
