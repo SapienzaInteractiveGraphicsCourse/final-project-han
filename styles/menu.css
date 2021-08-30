@@ -128,11 +128,12 @@
   
 
 .score {
-    width: 50%;
     height: 10vh;
     line-height: 10vh;
 
-    margin-left: 25%;
+    font-size: 3.5vw;
+    letter-spacing: 0px;
+
     margin-top: 5vh;
 }
 
