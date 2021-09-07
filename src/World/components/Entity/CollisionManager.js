@@ -83,6 +83,20 @@ class CollisionManager extends Entity
             }
         }
     }
+
+    reset () 
+    {
+        const maps = [player_objects, enemy_objects, neutral_objects]
+
+        for (const map of maps)
+        {
+            for (const obj of map.values())
+            {
+                obj.is_dead = true
+                this.remove(obj)
+            }
+        }
+    }
 }
 
 const instance = new CollisionManager()

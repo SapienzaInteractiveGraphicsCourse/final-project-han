@@ -1,7 +1,5 @@
 
-import { Clock } from '/final-project-han/vendor/three/three.module.js'
-
-import { OrbitControls } from '/final-project-han/vendor/three/OrbitControls.js'
+import { Clock } from '/vendor/three/three.module.js'
 
 import { createRenderer } from './systems/renderer.js'
 import { Resizer } from './systems/Resizer.js'
@@ -42,16 +40,12 @@ let camera
 let renderer
 let scene
 
-let player
-
 const sky = Sky
 const spaceships = SpaceshipsManager
 const explosions = ExplosionManager
 const bullets = BulletManager
 
 const collision_manager = CollisionManager
-
-let orbit
 
 let started = false
 let paused = false
@@ -144,10 +138,11 @@ function end ()
     hide(ui)
     hide(pause_btn)
 
-    camera.transitionTo(MENU_POSITION, 2000, MENU_LOOK_AT, reset)
+    camera.transitionTo(MENU_POSITION, 2000, MENU_LOOK_AT, () => {
+        reset()
+        show(menu)
+    } )
     camera.follow(null)    
-
-    show(menu)
 }
 
 function newLevel ()
@@ -188,6 +183,7 @@ function reset ()
     spaceships.reset()
     explosions.reset()
     bullets.reset()
+    collision_manager.reset()
 }
 
 class World 
@@ -201,8 +197,6 @@ class World
         container.append(renderer.domElement)
 
         const resizer = new Resizer(container, camera, renderer)
-
-        //orbit = new OrbitControls(camera, renderer.domElement)
     }
 
     async init () 
@@ -238,8 +232,6 @@ class World
         spaceships.update(delta)
         explosions.update(delta)
         bullets.update(delta)
-
-        //orbit.update()
         
         collision_manager.update(delta)
 
