@@ -1,5 +1,4 @@
-
-import { Clock } from '/vendor/three/three.module.js'
+import { Clock } from '/final-project-han/vendor/three/three.module.js'
 
 import { createRenderer } from './systems/renderer.js'
 import { Resizer } from './systems/Resizer.js'
